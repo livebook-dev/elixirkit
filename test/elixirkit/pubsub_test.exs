@@ -118,7 +118,7 @@ defmodule ElixirKit.PubSub.Test do
     path = Path.join(tmp_dir, "test.rs")
 
     File.write!(path, ~s"""
-    #!/usr/bin/env cargo +nightly -Zscript
+    #!/usr/bin/env -S cargo +nightly -Zscript
     ---cargo
     [package]
     edition = "2024"
@@ -151,7 +151,7 @@ defmodule ElixirKit.PubSub.Test do
     elixir_exited_path = Path.join(tmp_dir, "elixir_exited")
 
     File.write!(path, ~s"""
-    #!/usr/bin/env cargo +nightly -Zscript
+    #!/usr/bin/env -S cargo +nightly -Zscript
     ---cargo
     [package]
     edition = "2024"
@@ -226,7 +226,7 @@ defmodule ElixirKit.PubSub.Test do
     path = Path.join("/tmp", hash)
 
     File.write!(path, """
-    #!/usr/bin/env cargo +nightly -Zscript
+    #!/usr/bin/env -S cargo +nightly -Zscript
     ---cargo
     [package]
     edition = "2024"

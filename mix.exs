@@ -34,11 +34,7 @@ defmodule ElixirKit.MixProject do
     [
       docs: [&docs/1, "docs.rs"],
       "docs.rs": &docs_rs/1,
-      "test.all": [
-        "test",
-        "test.rs",
-        "test.examples"
-      ],
+      "test.all": &test_all/1,
       "test.rs": [
         "cmd cargo check --manifest-path elixirkit_rs/Cargo.toml",
         "cmd cargo test --manifest-path elixirkit_rs/Cargo.toml"
@@ -47,6 +43,12 @@ defmodule ElixirKit.MixProject do
         "cmd ./examples/cli_script.rs"
       ]
     ]
+  end
+
+  defp test_all(args) do
+    Mix.Task.run("test", args)
+    Mix.Task.run("test.rs")
+    Mix.Task.run("test.examples")
   end
 
   defp docs(_) do

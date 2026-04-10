@@ -1,0 +1,44 @@
+name: Test
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - elixir: "1.19"
+            otp: "27"
+            lint: lint
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: ${{ matrix.otp }}
+          elixir-version: ${{ matrix.elixir }}
+
+      - run: mix deps.get --check-locked
+
+      - run: mix format --check-formatted
+        if: ${{ matrix.lint }}
+
+      - run: mix deps.unlock --check-unused
+        if: ${{ matrix.lint }}
+
+      - run: mix deps.compile
+
+      - run: mix compile --no-optional-deps --warnings-as-errors
+        if: ${{ matrix.lint }}
+
+      - run: mix test
+        if: ${{ ! matrix.lint }}
+
+      - run: mix test --warnings-as-errors
+        if: ${{ matrix.lint }}
+
+      - run: mix test.all
