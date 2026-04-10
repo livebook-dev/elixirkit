@@ -4,7 +4,15 @@
 
 Run Elixir from Rust/Tauri apps and exchange messages over [PubSub].
 
-## Example
+See ["Building Desktop Apps with Tauri"](guides/tauri.md) for a step-by-step guide for using ElixirKit with Phoenix LiveView and [Tauri](https://tauri.app).
+
+Also, see:
+
+  * [`examples/cli_script.rs`](https://github.com/livebook-dev/elixirkit/blob/main/examples/cli_script.rs)
+  * [`examples/tauri_project`](https://github.com/livebook-dev/elixirkit/blob/main/examples/tauri_project)
+  * [`examples/tauri_script.rs`](https://github.com/livebook-dev/elixirkit/blob/main/examples/tauri_script.rs)
+
+## Usage
 
 On the Rust side, use [`elixirkit::elixir`] to start Elixir and
 [`elixirkit::PubSub`] to exchange messages. Subscribe before starting Elixir so
@@ -54,12 +62,6 @@ receive do
     IO.puts(["[elixir] ", inspect(message)])
 end
 ```
-
-See other examples:
-
-  * [`examples/cli_script.rs`](https://github.com/livebook-dev/elixirkit/blob/main/examples/cli_script.rs)
-  * [`examples/tauri_project`](https://github.com/livebook-dev/elixirkit/blob/main/examples/tauri_project)
-  * [`examples/tauri_script.rs`](https://github.com/livebook-dev/elixirkit/blob/main/examples/tauri_script.rs)
 
 ## License
 
