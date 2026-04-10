@@ -1,14 +1,18 @@
 defmodule ElixirKit.MixProject do
   use Mix.Project
 
+  @version "0.1.0-dev"
+  @source_url "https://github.com/livebook-dev/elixirkit"
+
   def project do
     [
       app: :elixirkit,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.19",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       aliases: aliases(),
+      package: package(),
       docs: docs()
     ]
   end
@@ -20,6 +24,28 @@ defmodule ElixirKit.MixProject do
   def application do
     [
       extra_applications: [:logger]
+    ]
+  end
+
+  defp package do
+    [
+      description: "Run Elixir from Rust/Tauri apps and exchange messages over PubSub.",
+      licenses: ["Apache-2.0"],
+      links: %{
+        "GitHub" => @source_url,
+        "Changelog" => "https://hexdocs.pm/req/changelog.html"
+      },
+      files: [
+        "lib",
+        ".formatter.exs",
+        "mix.exs",
+        "README.md",
+        "LICENSE*",
+        "license*",
+        "CHANGELOG.md",
+        "elixirkit_rs/Cargo.toml",
+        "elixirkit_rs/src"
+      ]
     ]
   end
 
@@ -49,6 +75,23 @@ defmodule ElixirKit.MixProject do
     Mix.Task.run("test", args)
     Mix.Task.run("test.rs")
     Mix.Task.run("test.examples")
+    validate_versions()
+  end
+
+  defp validate_versions do
+    {output, 0} =
+      System.cmd("cargo", ["pkgid", "--manifest-path", "#{__DIR__}/elixirkit_rs/Cargo.toml"])
+
+    cargo_version = output |> String.trim() |> String.split("@") |> List.last()
+
+    if cargo_version != @version do
+      Mix.raise("""
+      version mismatch:
+
+      mix.exs:    #{@version}
+      Cargo.toml: #{cargo_version}
+      """)
+    end
   end
 
   defp docs(_) do
