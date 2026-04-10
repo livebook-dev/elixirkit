@@ -140,6 +140,12 @@ impl PubSub {
                 "topic must be at most 255 bytes",
             ));
         }
+        let mut state = self.inner.connection_state.lock().unwrap();
+        while *state == ConnectionState::WaitingForConnection {
+            state = self.inner.connection_state_changed.wait(state).unwrap();
+        }
+        drop(state);
+
         let guard = self.inner.stream.lock().unwrap();
         match guard.as_ref() {
             Some(stream) => write_message(stream, topic.as_bytes(), message),
