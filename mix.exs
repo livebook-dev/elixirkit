@@ -33,7 +33,7 @@ defmodule ElixirKit.MixProject do
       licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => @source_url,
-        "Changelog" => "https://hexdocs.pm/req/changelog.html"
+        "Changelog" => "https://hexdocs.pm/elixirkit/changelog.html"
       },
       files: [
         "lib",
@@ -66,7 +66,9 @@ defmodule ElixirKit.MixProject do
         "cmd cargo test --manifest-path elixirkit_rs/Cargo.toml"
       ],
       "test.examples": [
-        "cmd ./examples/cli_script.rs"
+        "cmd ./examples/cli_script.rs",
+        "cmd --cd examples/tauri_project mix deps.get",
+        "cmd --cd examples/tauri_project mix test"
       ]
     ]
   end
