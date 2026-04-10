@@ -7,6 +7,7 @@ edition = "2024"
 tauri = "2"
 tauri_script = { path = "/Users/wojtek/src/tauri_script" }
 elixirkit = { path = "../elixirkit_rs" }
+# elixirkit = { git = "https://github.com/livebook-dev/elixirkit" }
 ---
 
 fn run() {

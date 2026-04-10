@@ -5,6 +5,7 @@ edition = "2024"
 
 [dependencies]
 elixirkit = { path = "../elixirkit_rs" }
+# elixirkit = { git = "https://github.com/livebook-dev/elixirkit" }
 ---
 
 fn main() {
