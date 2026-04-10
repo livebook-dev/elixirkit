@@ -1,5 +1,7 @@
 # ElixirKit
 
+[![CI](https://github.com/livebook-dev/elixirkit/workflows/test.yml/badge.svg)](https://github.com/livebook-dev/elixirkit/actions/workflows/ci.yml)
+
 Run Elixir from Rust/Tauri apps and exchange messages over [PubSub].
 
 ## Example
