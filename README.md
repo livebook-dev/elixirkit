@@ -59,7 +59,7 @@ See other examples:
 
   * [`examples/cli_script.rs`](https://github.com/livebook-dev/elixirkit/blob/main/examples/cli_script.rs)
   * [`examples/tauri_project`](https://github.com/livebook-dev/elixirkit/blob/main/examples/tauri_project)
-  * [`examples/tauri_script`](https://github.com/livebook-dev/elixirkit/blob/main/examples/tauri_script.rs)
+  * [`examples/tauri_script.rs`](https://github.com/livebook-dev/elixirkit/blob/main/examples/tauri_script.rs)
 
 ## License
 
