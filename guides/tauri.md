@@ -4,7 +4,7 @@ Elixir and Phoenix are great for building web applications with rich, server-dri
 
 In this guide we will learn how to take a Phoenix LiveView app and distribute it as a desktop app using [Tauri](https://tauri.app). Tauri is a Rust framework for building cross-platform apps for all major desktop and mobile platforms. Tauri is an ideal companion to ElixirKit -- it handles cross-platform windowing, native OS integration, and bundling this all together into installers for each platform.
 
-You can see the final app source code at [`examples/tauri_project`](https://github.com/livebook-dev/livebook/tree/main/elixirkit_next/examples/tauri_project).
+You can see the final app source code at [`examples/tauri_project`](https://github.com/livebook-dev/elixirkit/tree/main/examples/tauri_project).
 
 Here, we will re-create it from scratch. Let's get started!
 
