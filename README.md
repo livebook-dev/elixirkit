@@ -44,7 +44,7 @@ On the Elixir side, start [`ElixirKit.PubSub`] under a supervision tree and use
 
 ```elixir
 # script.exs
-Mix.install([:elixirkit])
+Mix.install([{:elixirkit, github: "livebook-dev/elixirkit"}])
 
 children = [
   {ElixirKit.PubSub,

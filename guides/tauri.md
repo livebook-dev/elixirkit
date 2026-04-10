@@ -108,7 +108,7 @@ That's OK, we're gonna point the app to our LiveView next!
 First, let's add ElixirKit to mix.exs dependencies:
 
 ```diff
-+ {:elixirkit, "~> 0.1.0"}
++ {:elixirkit, github: "livebook-dev/elixirkit"}
 ```
 
 and run `mix deps.get`.
