@@ -1,6 +1,6 @@
 # ElixirKit
 
-[![CI](https://github.com/livebook-dev/elixirkit/workflows/test.yml/badge.svg)](https://github.com/livebook-dev/elixirkit/actions/workflows/ci.yml)
+[![Test](https://github.com/livebook-dev/elixirkit/actions/workflows/test.yml/badge.svg)](https://github.com/livebook-dev/elixirkit/actions/workflows/test.yml)
 
 Run Elixir from Rust/Tauri apps and exchange messages over [PubSub].
 
@@ -54,6 +54,12 @@ receive do
     IO.puts(["[elixir] ", inspect(message)])
 end
 ```
+
+See other examples:
+
+  * [`examples/cli_script.rs`](https://github.com/livebook-dev/elixirkit/blob/main/examples/cli_script.rs)
+  * [`examples/tauri_project`](https://github.com/livebook-dev/elixirkit/blob/main/examples/tauri_project)
+  * [`examples/tauri_script`](https://github.com/livebook-dev/elixirkit/blob/main/examples/tauri_script.rs)
 
 ## License
 
