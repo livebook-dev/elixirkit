@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "identifier": "com.example.Example",
   "build": {
-    "beforeBuildCommand": "MIX_ENV=prod mix do compile + assets.deploy + release --overwrite --path src-tauri/target/rel"
+    "beforeBuildCommand": "MIX_ENV=prod mix do compile + assets.deploy + release --overwrite --path src-tauri/target/rel",
+    "beforeDevCommand": "mkdir -p src-tauri/target/rel"
   },
   "app": {
     "withGlobalTauri": true,
@@ -14,9 +15,9 @@
   },
   "bundle": {
     "active": true,
-   "resources": {
-     "target/rel": "rel"
-   },
+    "resources": {
+      "target/rel": "rel"
+    },
     "targets": "all",
     "icon": [
       "icons/32x32.png",
