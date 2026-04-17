@@ -295,6 +295,8 @@ Next, let's change `src-tauri/src/lib.rs` to use `mix phx.server` in debug build
   }
 ```
 
+Make sure to update the name of the started release binary if your application is not `:example`.
+
 Note, we hardcode `SECRET_KEY_BASE` value for brevity. Depending on your security requirements, you may want to generate a random key instead. Similarly, we hardcode `PORT` to `4000`. You may want to choose reasonably random port for your app that's unlikely to be taken instead.
 
 Finally, let's build it!
