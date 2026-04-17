@@ -5,7 +5,7 @@ edition = "2024"
 
 [dependencies]
 tauri = "2"
-tauri_script = { path = "/Users/wojtek/src/tauri_script" }
+tauri-script = { git = "https://github.com/wojtekmach/tauri-script" }
 elixirkit = { path = "../elixirkit_rs" }
 # elixirkit = { git = "https://github.com/livebook-dev/elixirkit" }
 ---
