@@ -6,13 +6,14 @@ defmodule ElixirKit.Release do
   @doc ~S"""
   Signs the release for distribution.
 
-  Currently, this function is only executed on macOS.
+  Currently, this function is only executed on **macOS**.
 
-  It expects the following environment variables:
+  ## Environment Variables
 
-    * `APPLE_SIGNING_IDENTITY` - identity to use for code signing.
+    * `APPLE_SIGNING_IDENTITY` - identity to use for code signing. Defaults to `-`, that is,
+      Ad-hoc signing. See `$ man codesign` for more information.
 
-  It can be configured with the following release options:
+  ## Release Options
 
     * `:entitlements` - path to entitlements file.
 
@@ -68,7 +69,7 @@ defmodule ElixirKit.Release do
   end
 
   defp codesign_macos(release) do
-    identity = System.fetch_env!("APPLE_SIGNING_IDENTITY")
+    identity = System.get_env("APPLE_SIGNING_IDENTITY", "-")
 
     entitlements_flag =
       if entitlements = release.options[:entitlements] do
