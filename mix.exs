@@ -1,7 +1,7 @@
 defmodule ElixirKit.MixProject do
   use Mix.Project
 
-  @version "0.1.0-dev"
+  @version "0.1.0"
   @source_url "https://github.com/livebook-dev/elixirkit"
 
   def project do
@@ -41,7 +41,6 @@ defmodule ElixirKit.MixProject do
         "mix.exs",
         "README.md",
         "LICENSE*",
-        "license*",
         "CHANGELOG.md",
         "elixirkit_rs/Cargo.toml",
         "elixirkit_rs/src"
@@ -52,7 +51,7 @@ defmodule ElixirKit.MixProject do
   defp docs do
     [
       main: "readme",
-      extras: ["README.md", "guides/tauri.md"]
+      extras: ["README.md", "CHANGELOG.md", "guides/tauri.md"]
     ]
   end
 
