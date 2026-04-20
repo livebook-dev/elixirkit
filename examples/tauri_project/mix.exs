@@ -64,6 +64,7 @@ defmodule Example.MixProject do
       {:dns_cluster, "~> 0.2.0"},
       {:bandit, "~> 1.5"},
       {:elixirkit, path: "../.."}
+      # {:elixirkit, "~> 0.1.0"}
     ]
   end
 

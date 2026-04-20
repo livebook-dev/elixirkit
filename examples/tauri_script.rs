@@ -24,7 +24,8 @@ fn run() {
     let script_exs = r#"
     Mix.install([
       {:phoenix_playground, "~> 0.1.8"},
-      {:elixirkit, path: "."}
+      # {:elixirkit, path: "."}
+      {:elixirkit, "~> 0.1.0"}
     ])
 
     defmodule DemoLive do
