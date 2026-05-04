@@ -4,7 +4,7 @@
 
 Run Elixir from Rust/Tauri apps and exchange messages over [PubSub].
 
-See ["Building Desktop Apps with Tauri"](guides/tauri.md) for a step-by-step guide for using ElixirKit with Phoenix LiveView and [Tauri](https://tauri.app).
+See ["Building Desktop Apps with Tauri"] for a step-by-step guide for using ElixirKit with Phoenix LiveView and [Tauri](https://tauri.app).
 
 Also, see:
 
@@ -85,3 +85,5 @@ limitations under the License.
 [`elixirkit_rs`]:                 https://hexdocs.pm/elixirkit/rs/elixirkit/index.html
 [`elixirkit::elixir`]:            https://hexdocs.pm/elixirkit/rs/elixirkit/fn.elixir.html
 [`elixirkit::PubSub`]:            https://hexdocs.pm/elixirkit/rs/elixirkit/struct.PubSub.html
+
+["Building Desktop Apps with Tauri"]: https://hexdocs.pm/elixirkit/tauri.html
